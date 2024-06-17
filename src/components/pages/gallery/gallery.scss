@@ -1,0 +1,40 @@
+.gallery {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 120px auto;
+}
+
+.photo_gallery {
+    align-items: center;
+    align-content: center;
+    img {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.photoANDtext {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.photo_text {
+    padding: 20px;
+    text-align: center;
+    align-content: center;
+}
+
+.about-svg1 {
+    z-index: -1;
+    margin: -125px auto;
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 100%;
+    }
+    .photoANDtext {
+        grid-template-columns: 100%;
+    }
+}

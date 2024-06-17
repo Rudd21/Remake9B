@@ -1,0 +1,95 @@
+    .background_about {
+        width: 100vw;
+        height: 50vh;
+        background: linear-gradient(90deg, rgba(0, 230, 246, 1) 0%, rgba(73, 46, 135, 1) 100%);
+    }
+    
+    .banner_h1 {
+        letter-spacing: 0;
+        display: block;
+        font-size: 220px;
+        text-align: center;
+        width: 100vw;
+        font-weight: 700;
+        background: linear-gradient(90deg, rgba(0, 230, 246, 1) 0%, rgba(73, 46, 135, 1) 100%);
+        background-size: 400% 400%;
+        background-clip: text;
+        opacity: 0.8;
+        -webkit-text-fill-color: transparent;
+        animation: aitf 5s linear infinite;
+        user-select: none;
+        text-decoration: underline;
+        position: absolute;
+    }
+    
+    @keyframes aitf {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    .about-svg1 {
+        z-index: -1;
+        margin: -125px auto;
+        opacity: 0.3;
+    }
+    
+    .about-svg2 {
+        margin-left: 23%;
+    }
+    
+    .text_about1 {
+        font-size: 27px;
+        width: 70%;
+        margin: 75px auto;
+        line-height: 1.5;
+    }
+    
+    .text_about2 {
+        font-size: 27px;
+        width: 70%;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+    
+    @media (max-width: 768px) {
+        .basement_about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .banner_h1 {
+            font-size: 65px;
+        }
+        .about-svg1 {
+            margin-top: 125px;
+            margin-left: 5%;
+            z-index: -1;
+            width: 90%;
+            opacity: 0.3
+        }
+        .text_about1,
+        .text_about2 {
+            font-size: 20px;
+        }
+        .about-svg2 {
+            width: 70vw;
+            height: 25vh;
+            margin: 0 auto;
+        }
+        .ssides_footer {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .footer_social {
+            display: flex;
+            align-items: center;
+        }
+    }

@@ -1,0 +1,53 @@
+.div {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgb(45, 45, 45);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: backgoundLoaing 20s infinite;
+    overflow: hidden;
+    z-index: 2;
+    p {
+        text-align: center;
+        font-family: "Anta", sans-serif;
+        font-size: 25px;
+        // color: #37B5B6;
+        color: #ffffff;
+    }
+}
+
+#loading {
+    align-self: center;
+}
+
+.logoAndText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes backgoundLoading {
+    0% {
+        background-color: #0A1D56;
+    }
+    14% {
+        background-color: #492E87;
+    }
+    28% {
+        background-color: #257a7a;
+    }
+    42% {
+        background-color: #F2F597;
+    }
+    56% {
+        background-color: #257a7a;
+    }
+    70% {
+        background-color: #492E87;
+    }
+    100% {
+        background-color: #0A1D56;
+    }
+}
