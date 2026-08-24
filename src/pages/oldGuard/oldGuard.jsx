@@ -173,7 +173,7 @@ const oldGuard = () => {
                     color={colors[colorIndex]}
                 ></l-grid> */}
                 <div className="social">
-                    <div class="dropdown">
+                    <div className="dropdown">
                         <Link to="/" className='header-nav'>Back</Link>
                     </div>
                     <button className='header-nav'>Switch theme</button>

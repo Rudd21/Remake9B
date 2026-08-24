@@ -1,8 +1,22 @@
+.load-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2d2d2d;
+  z-index: 9999; // Завжди поверх усього контенту
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; // Щоб під час руху крізь неї не можна було нікуди клікнути
+}
+
 .div {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: rgb(45, 45, 45);
+    background: #2d2d2d;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,8 +27,7 @@
         text-align: center;
         font-family: "Anta", sans-serif;
         font-size: 25px;
-        // color: #37B5B6;
-        color: #ffffff;
+        color: #37B5B6;
     }
 }
 
@@ -26,6 +39,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: white;
 }
 
 @keyframes backgoundLoading {

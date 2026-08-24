@@ -1,3 +1,9 @@
+.basement_about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
     .background_about {
         width: 100vw;
         height: 50vh;
@@ -7,9 +13,9 @@
     .banner_h1 {
         letter-spacing: 0;
         display: block;
-        font-size: 220px;
-        text-align: center;
+        font-size: clamp(4rem, 6vw + 1rem, 7rem);
         width: 100vw;
+        text-align: center;
         font-weight: 700;
         background: linear-gradient(90deg, rgba(0, 230, 246, 1) 0%, rgba(73, 46, 135, 1) 100%);
         background-size: 400% 400%;
@@ -36,60 +42,34 @@
     
     .about-svg1 {
         z-index: -1;
-        margin: -125px auto;
         opacity: 0.3;
     }
-    
+
     .about-svg2 {
-        margin-left: 23%;
+        width: 90vw;
+        margin: 0 auto;
     }
     
     .text_about1 {
-        font-size: 27px;
-        width: 70%;
+        font-size: 1rem;
+        width: 90%;
         margin: 75px auto;
         line-height: 1.5;
     }
     
     .text_about2 {
         font-size: 27px;
-        width: 70%;
-        margin: 0 auto;
+        width: 90%;
+        margin: 0.5rem auto;
         line-height: 1.5;
     }
     
-    @media (max-width: 768px) {
-        .basement_about {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .banner_h1 {
-            font-size: 65px;
-        }
-        .about-svg1 {
-            margin-top: 125px;
-            margin-left: 5%;
-            z-index: -1;
-            width: 90%;
-            opacity: 0.3
-        }
-        .text_about1,
-        .text_about2 {
-            font-size: 20px;
-        }
-        .about-svg2 {
-            width: 70vw;
-            height: 25vh;
-            margin: 0 auto;
-        }
-        .ssides_footer {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-        .footer_social {
-            display: flex;
-            align-items: center;
-        }
+@media (min-width: 1024px){
+    .text_about1{
+        font-size: 27px;
     }
+
+    .about-svg2{
+        width: 60vw;
+    }
+}

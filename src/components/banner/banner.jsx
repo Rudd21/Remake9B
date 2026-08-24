@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import 'ldrs/grid'
 import "./banner.scss"
 import { infinity } from 'ldrs'
+import { useOutletContext } from 'react-router'
 
 const triangleVariats = {
     initial:{
@@ -11,8 +12,8 @@ const triangleVariats = {
         duration:5,
         staggerChildren: 0.1,
         delay: 4,
-        ease: "easeInOut", // Тип анімації
-        yoyo: Infinity // Відтворення анімації в обидва напрямки нескінченно разів
+        ease: "easeInOut",
+        yoyo: Infinity
       }
     },
     animate:{
@@ -61,31 +62,11 @@ const buttonAnim ={
         }
     },
 }
-const banner = () => {
-    const elementRef = useRef(null);
-    const [heightBannerPixels, setHeightBannerPixels] = useState(0);
-  
-    useEffect(() => {
-        if (elementRef.current) {
-            const height = elementRef.current.clientHeight;
-            setHeightBannerPixels(height);
-        }
-    }, []);
-    useEffect(() =>{
-        console.log(heightBannerPixels)
-    }, [heightBannerPixels])
-  const [totalScrolls, setTotalScrolls] = useState(0);
-  useEffect(() => {
-    const handleWheel = (event) => {
-      setTotalScrolls(totalScrolls + event.deltaY);
-    };
 
-    window.addEventListener("wheel", handleWheel);
+// Component
+const Banner = () => {
 
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, [totalScrolls]);
+    const {theme, setTheme} = useOutletContext() || {};
 
     const [colorIndex, setColorIndex] = useState(0)
     const colors =['#6942c5','#492E87'];
@@ -96,43 +77,36 @@ const banner = () => {
         },1000)
         return () => clearInterval(intervalId)
     }, []);
-    const [Position,setPosition] = useState({x:0, y:0})
-    const mousePosition = (e) =>{
-        setPosition({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })
-    }
-  return (
-    <section className='banner' ref={elementRef} >
-        <nav className='banner-nav'>
-            <div className="content-nav">
-                {/* <l-grid
-                    size="60"
-                    speed="1.5"
-                    stroke="1.5"
-                    style={{ transition: 'background-color 5s linear' }}
-                    color={colors[colorIndex]}
-                ></l-grid> */}
-                <div className="social">
-                    <div class="dropdown">
-                        <button className='header-nav'>Get in touch</button>
-                        <div class="dropdown-content">
-                            <a href="#">Instagram</a>
-                            <a href="#">Telegram</a>
-                            <a href="#">Reddit</a>
-                        </div>
-                    </div>
-                    <button className='header-nav'>Switch theme</button>
-                </div>
-            </div>
-        </nav>
-        <main className='banner-main'>
-            <div className="text">
-                <div className='B10'>
-                <div className='media_styles' style={{display:'flex', overflow:'hidden'}}>
-                    <motion.p variants={appeardText} initial="initial" animate="animate" className='alpha10'>10 Alpha</motion.p>
-                    <p className='triangleAnim'>◂</p>
 
+  return (
+    <section className='banner'>
+        <motion.div
+            // initial={{ opacity: 0, y: 50 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // viewport={{ once: false, amount: 0.5 }}
+            // transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+            <nav className='banner-nav'>
+                <div className="content-nav">
+                    <div className="social">
+                        <div className="dropdown">
+                            <button className='header-nav'>Зв'язатися</button>
+                            <div className="dropdown-content">
+                                <a href="https://instagram.com/taqpas">Instagram</a>
+                                <a href="https://t.me/samogonshikkk">Telegram</a>
+                                <a href="https://www.linkedin.com/in/taras-yatskov-657303425/">LinkedIn</a>
+                            </div>
+                        </div>
+                        <button onClick={() => setTheme(theme === 'black' ? 'white' : 'black')} className='header-nav'>Змінити тему</button>
+                    </div>
                 </div>
-                <div style={{overflow:'hidden'}}>
+            </nav>
+            <main className='banner-content'>
+                <div className="banner-text">
+                    <div className='main-text'>
+                        <h1 className='graduation-text' variants={appeardText} initial="initial" animate="animate">Випуск 2025</h1>
+                        <p className='triangleAnim'>◂</p>
+                    </div>
                     <motion.p variants={appeardText} initial="initial" 
                         animate={{ 
                             y: 0,
@@ -142,77 +116,30 @@ const banner = () => {
                                 delay: 2.2
                             }
                         }}
-                    className='descibe-web'>Yes, you have correctly noticed. Beta became Alpha, not vice versa</motion.p>
+                        className='describe-web'
+                    >    
+                        Клас є випуском Ліцею №18. Клас існував під буквою 'Б' з 2014 року та під буквою 'A' з 2023 року
+                    </motion.p>
                 </div>
-                </div>
-            </div>
-            <motion.div className="images" onMouseMove={mousePosition} 
-            initial={{
-                overflow: 'hidden',
-            }}
-            animate={{
-                overflow: 'visible',
-                transition: {
-                    duration: 1,
-                    delay: 5.2
-                }
-            }}>
-                <motion.div className="image1-box" variants={appeardText} initial="initial"                         
-                        animate={{ 
-                            y: 0,
-                            opacity: 1,
-                            transition: {
-                                duration: 2,
-                                delay: 3.4
-                            }
-                        }}>
-                    <img                  
-                    // style={{
-                    //     transformOrigin: `${Position.x}px ${Position.y}px`, // Встановлення центру обертання
-                    //     transform: `scale(1.05) rotate(${0.1 * Position.x}deg) rotate(${0.1 * Position.y}deg)` // Обертання та масштабування
-                    //     }} 
-                        className='image1'
+                <motion.div className="image-box" variants={appeardText} initial="initial"                         
+                    animate={{ 
+                        y: 0,
+                        opacity: 1,
+                        transition: {
+                        duration: 2,
+                        delay: 3.4
+                   }}}
+                >
+                    <img
+                        className='image'
                         src="./public/donbasForAnim.jpg" alt="" 
                     />
-                    <p> - Liberation of Donetsk</p>
+                    <p>Фотожаба "Звільнення Донецьку"</p>
                 </motion.div>
-                <motion.div ho className="image2-box" variants={appeardText} initial="initial" 
-                        animate={{ 
-                            y: -10,
-                            opacity: 1,
-                            transition: {
-                                duration: 2,
-                                delay: 3.7
-                            }
-                        }}>
-                    <p>Liberation of Mariupol - </p>
-                    <img
-                // style={{
-                //     transformOrigin: `${Position.x}px ${Position.y}px`, // Встановлення центру обертання
-                //     transform: `scale(1.05) rotate(${0.1 * Position.x}deg) rotate(${0.1 * Position.y}deg)` // Обертання та масштабування
-                //     }}
-                    className='image2'
-                     src="./public/marik.jpg" alt="" />
-                </motion.div>
-            </motion.div>
-        </main>
-        <footer className='footer'>
-                <motion.div style={{overflow:'hidden', height:'70px'}} variants={buttonAnim} initial="initial" animate="animate">
-                    <motion.button variants={appeardText} initial="initial" 
-                        animate={{ 
-                            y: 0,
-                            opacity: 1,
-                            transition: {
-                                duration: 2,
-                                delay: 2.3
-                            }
-                        }} className='letsScroll'>
-                        <p>Let's Scroll ⇓</p>
-                    </motion.button>
-                </motion.div>
-        </footer>
+            </main>
+        </motion.div>
     </section>
   )
 }
 
-export default banner
+export default Banner

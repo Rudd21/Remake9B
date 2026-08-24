@@ -1,27 +1,24 @@
 import React, {useState, useEffect} from 'react'
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import "./load-screen.scss"
 import 'ldrs/hatch'
 
-const loadVariats = {
-  initial:{
-    x:0,
-    opacity:1,
-    transition:{
-      duration:2,
-      staggerChildren: 0.1,
-      delay: 2,
-    }
+const screenVariants = {
+  // Стан 1
+  covered: {
+    y: 0,
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] }
   },
-  animate:{
-    x: 1700,
-    opacity:0,
-    transition:{
-      duration:2,
-      staggerChildren: 0.1,
-      delay: 2,
-    }
+  // Стан 2
+  uncovered: {
+    y: "-100vh",
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.2 }
   }
+}
+
+const logoVariants = {
+  covered: { opacity: 1, scale: 1 },
+  uncovered: { opacity: 0, scale: 0.8, transition: { duration: 0.3 } }
 }
 
 const opacityVariats = {
@@ -44,48 +41,24 @@ const opacityVariats = {
     }
   }
 }
-// Default values shown  
-const LoadScreen = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const handleLoad = () =>{
-      setIsLoading(false)
-    }
-//  window.addEventListener('load', handleLoad)
-// return () => {
-//   window.addEventListener('load', handleLoad)
-// }
-  const timeout = setTimeout(() => {
-    setIsLoading(false);
-  }, 10000);
 
-return () => clearTimeout(timeout);
-}, [])
+// Default values shown  
+const LoadScreen = ({ isTransitioning }) => {
+  
+  const currentStage = isTransitioning ? "covered" : "uncovered";
 
   return (
-    <>
-      <motion.div 
-        className="div"
-        variants={loadVariats} 
-        initial="initial"
-        animate="animate" 
-        // animate={isLoading ? "animate" : "initial"}
-      >
-      <motion.div className='logoAndText' 
-      variants={opacityVariats} 
-      initial="initial" 
-      animate="animate">
-        <l-hatch
-        id="loading"
-        size="42"
-        stroke="4"
-        speed="3.5"
-        color="#ffffff" 
-        ></l-hatch>
+    <motion.div 
+      className="load-screen-overlay"
+      variants={screenVariants}
+      initial="covered"
+      animate={currentStage}
+    >
+      <motion.div className='logoAndText' variants={logoVariants}>
+        <l-hatch id="loading" size="42" stroke="4" speed="3.5" color="#ffffff"></l-hatch>
         <p>While everyone was studying history, we threw in snus</p>
       </motion.div>
-      </motion.div>
-    </>
+    </motion.div>
   )
 }
 

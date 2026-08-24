@@ -1,0 +1,27 @@
+.base_site{
+}
+
+.scroll-block{
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    padding-bottom: 1rem;
+
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    
+    scroll-behavior: smooth; 
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    scrollbar-width: none;
+}
+
+@media (min-width: 1024px){
+    .scroll-block{
+        overflow-x: auto;
+    }
+}
