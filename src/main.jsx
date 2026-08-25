@@ -13,15 +13,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 console.log('ROOT:', document.getElementById('root'))
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Remake9B">
       <Routes>
         <Route path="/" element={<App />}>
 
           <Route index element={<Home />} />
-          <Route path="/about_site" element={<AboutSite />} />
-          <Route path="/classmates" element={<Classmates />} />
-          <Route path="/oldGuard" element={<OldGuard />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="about_site" element={<AboutSite />} />
+          <Route path="classmates" element={<Classmates />} />
+          <Route path="oldGuard" element={<OldGuard />} />
+          <Route path="gallery" element={<Gallery />} />
         
         </Route>
       </Routes>
