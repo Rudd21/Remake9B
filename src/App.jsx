@@ -43,13 +43,12 @@ const App = () => {
   }
 
   return (
-    <h1>APP WORKS</h1>
-    // <div className={`base_site ${theme}`}>
-    //   {false && <LoadScreen isTransitioning={isTransitioning}/>}
-    //   <main>
-    //     <Outlet context={{pallete, theme, setTheme, navigateTo}} />
-    //   </main>
-    // </div>
+    <div className={`base_site ${theme}`}>
+      {false && <LoadScreen isTransitioning={isTransitioning}/>}
+      <main>
+        <Outlet context={{pallete, theme, setTheme, navigateTo}} />
+      </main>
+    </div>
   )
 };
 
