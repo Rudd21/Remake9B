@@ -114,9 +114,9 @@ const Footer = () => {
                   <p style={{color: pallete.color}}>Follow developer</p>
                 </div>
                 <div className="links_list ">
-                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://t.me/furry_yushchenko"><img className='logo_link' src="telegram.png" alt="" /></a>
-                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://instagram.com/taqpas"><img className='logo_link' src="instagram.png" alt="" /></a>
-                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://www.linkedin.com/in/taras-yatskov-657303425/"><img className='logo_link' src="linkedin.png" alt="" /></a>
+                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://t.me/furry_yushchenko"><img className='logo_link' src="telegram.png" alt="telegram_link" /></a>
+                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://instagram.com/taqpas"><img className='logo_link' src="instagram.png" alt="instagram_link" /></a>
+                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://www.linkedin.com/in/taras-yatskov-657303425/"><img className='logo_link' src="linkedin.png" alt="linkedin_link" /></a>
                 </div>
               </div>
             </div>

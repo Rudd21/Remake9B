@@ -132,7 +132,7 @@ const Banner = () => {
                 >
                     <img
                         className='image'
-                        src="./public/donbasForAnim.jpg" alt="" 
+                        src="donbasForAnim.jpg" alt="" 
                     />
                     <p>Фотожаба "Звільнення Донецьку"</p>
                 </motion.div>
