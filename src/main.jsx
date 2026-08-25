@@ -1,3 +1,5 @@
+console.log('MAIN JSX LOADED')
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
@@ -8,6 +10,7 @@ import OldGuard from "./pages/oldGuard/oldGuard.jsx";
 import Gallery from "./pages/gallery/gallery.jsx";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+console.log('ROOT:', document.getElementById('root'))
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
