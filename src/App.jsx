@@ -36,7 +36,6 @@ const App = () => {
     setTimeout(()=>{
       navigateCallback();
 
-
       setTimeout(()=>{
         setIsTransitioning(false)
       }, 100)
@@ -45,7 +44,7 @@ const App = () => {
 
   return (
     <div className={`base_site ${theme}`}>
-      <LoadScreen isTransitioning={isTransitioning}/>
+      {false && <LoadScreen isTransitioning={isTransitioning}/>}
       <main>
         <Outlet context={{pallete, theme, setTheme, navigateTo}} />
       </main>
