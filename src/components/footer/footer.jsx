@@ -116,7 +116,7 @@ const Footer = () => {
                 </div>
                 <div className="links_list ">
                   <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://t.me/furry_yushchenko"><img className='logo_link' src={`${content_link}telegram.png`} alt="telegram_link" /></a>
-                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://instagram.com/taqpas"><img className='logo_link' src="instagram.png" alt={`${content_link}instagram_link`} /></a>
+                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://instagram.com/taqpas"><img className='logo_link' src={`${content_link}instagram.png`} alt="instagram_ling" /></a>
                   <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://www.linkedin.com/in/taras-yatskov-657303425/"><img className='logo_link' src={`${content_link}linkedin.png`} alt="linkedin_link" /></a>
                 </div>
               </div>

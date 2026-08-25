@@ -19,7 +19,7 @@ const ScrollNav = ({ navigateTo }) => {
         <AnimatedLink to="/about_site"  className='button aboutSite'>
           <div className="text-button">
             <h1>Про сайт</h1>
-            <p>Історія починається з 2021 року, коли виникла ідея</p>
+            <p>Історія починається з 2021 року</p>
           </div>
         </AnimatedLink>
         <AnimatedLink to="/classmates" className='button aboutClassmate'>
