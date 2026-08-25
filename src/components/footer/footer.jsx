@@ -72,6 +72,7 @@ const Footer = () => {
   const {pallete, theme, setTheme} = useOutletContext() || {};
   const [changeCitata, setChangeCitata] = useState(0);
 
+  const content_link = 'https://raw.githubusercontent.com/Rudd21/Remake9B/refs/heads/main/public/'
 
   const intervalCitata = () => {
     setChangeCitata(prevState => (prevState + 1) % citatas.length);
@@ -114,9 +115,9 @@ const Footer = () => {
                   <p style={{color: pallete.color}}>Follow developer</p>
                 </div>
                 <div className="links_list ">
-                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://t.me/furry_yushchenko"><img className='logo_link' src="telegram.png" alt="telegram_link" /></a>
-                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://instagram.com/taqpas"><img className='logo_link' src="instagram.png" alt="instagram_link" /></a>
-                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://www.linkedin.com/in/taras-yatskov-657303425/"><img className='logo_link' src="linkedin.png" alt="linkedin_link" /></a>
+                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://t.me/furry_yushchenko"><img className='logo_link' src={`${content_link}telegram.png`} alt="telegram_link" /></a>
+                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://instagram.com/taqpas"><img className='logo_link' src="instagram.png" alt={`${content_link}instagram_link`} /></a>
+                  <a className='desc_link' style={{background: pallete.buttonBackground}} href="https://www.linkedin.com/in/taras-yatskov-657303425/"><img className='logo_link' src={`${content_link}linkedin.png`} alt="linkedin_link" /></a>
                 </div>
               </div>
             </div>

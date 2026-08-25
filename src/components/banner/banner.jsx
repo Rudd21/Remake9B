@@ -68,6 +68,8 @@ const Banner = () => {
 
     const {theme, setTheme} = useOutletContext() || {};
 
+    const content_link = 'https://raw.githubusercontent.com/Rudd21/Remake9B/refs/heads/main/public/'
+
     const [colorIndex, setColorIndex] = useState(0)
     const colors =['#6942c5','#492E87'];
 
@@ -132,7 +134,7 @@ const Banner = () => {
                 >
                     <img
                         className='image'
-                        src="donbasForAnim.jpg" alt="" 
+                        src={content_link + `donbasForAnim.jpg`} alt="banner_image" 
                     />
                     <p>Фотожаба "Звільнення Донецьку"</p>
                 </motion.div>
